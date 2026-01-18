@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# next
+.next/
+out/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SQLite DB (DON'T PUSH LOCAL DB)
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# misc
+.vercel/
