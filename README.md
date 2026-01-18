@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ticket Lookup App
+
+A modern full-stack ticket lookup web application built with **Next.js** and **SQLite**, allowing users to search for tickets using a **PRN or Ticket Code** and instantly view passenger, route, and timing details.
+
+The app features a fixed full-screen background, a clean glass-style UI, and a lightweight server API backed by SQLite for fast local lookups.
+
+---
+
+## Features
+
+- Search tickets by **PRN** or **Ticket Code**
+- View passenger details, route, ETA, and journey timing
+- Fixed full-screen hero background that stays constant on scroll
+- Clean, responsive UI with modern styling
+- SQLite-backed API using `better-sqlite3`
+- One-command database seeding for local development
+
+---
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **React**
+- **SQLite** (`better-sqlite3`)
+- **Tailwind CSS**
+- **Node.js**
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
+### 1. Install dependencies
 ```bash
+npm install
+
+## Seed the database
+npm run seed
+This creates a local SQLite database with sample ticket data
+
+## Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+open:
+http://Localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sample Search Inputs
+Use these to test the app after seeding:
+PRN123456
+TCK-1Z9Q7M
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## PRoject Structure
+.
+├── scripts/
+│   └── seed.js          # SQLite seed script
+├── src/
+│   ├── app/
+│   │   ├── api/ticket/  # Ticket lookup API
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   └── lib/
+│       └── db.ts        # SQLite database connection
+├── data/                # Local SQLite DB (gitignored)
+├── public/              # Static assets
+└── package.json
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+The SQLite database file is not committed to Git.
+Run npm run seed after cloning to generate the database locally.
+Turbopack is disabled on Windows for stability.
+ 
