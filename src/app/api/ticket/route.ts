@@ -41,7 +41,9 @@ export async function GET(req: Request) {
   }
 
   const found = TICKETS.find(
-    (t) => t.ticketCode.toUpperCase() === code.toUpperCase() || t.prn.toUpperCase() === code.toUpperCase()
+    (t) =>
+      t.ticketCode.toUpperCase() === code.toUpperCase() ||
+      t.prn.toUpperCase() === code.toUpperCase()
   );
 
   if (!found) {
