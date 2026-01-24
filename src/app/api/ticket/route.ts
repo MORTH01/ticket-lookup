@@ -10,7 +10,7 @@ const TICKETS = [
     toCity: "Mumbai",
     route: "Pune → Lonavala → Panvel → Mumbai",
     departureISO: "2026-01-20T08:15:00+05:30",
-    arrivalISO: "2026-01-20T11:40:00+05:30",
+    arrivalISO:   "2026-01-20T08:40:00+05:30",
     etaMinutes: 25,
     status: "CONFIRMED",
   },
