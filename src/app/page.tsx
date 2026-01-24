@@ -65,11 +65,10 @@ export default function Page() {
 
   const derived = useMemo(() => {
     if (!ticket) return null;
-    const duration = diffMins(ticket.departureISO, ticket.arrivalISO);
     return {
       departure: formatDateTime(ticket.departureISO),
       arrival: formatDateTime(ticket.arrivalISO),
-      durationPretty: prettyMins(duration),
+      durationPretty: prettyMins(ticket.etaMinutes),
       etaPretty: prettyMins(ticket.etaMinutes),
     };
   }, [ticket]);
@@ -278,7 +277,7 @@ export default function Page() {
           )}
 
           <footer className="mt-6 text-sm text-white/50">
-            Built with Next.js + SQLite. Replace the sample DB seeding with your real ticket source later.
+            Vac-Vectoor Hyperloop
           </footer>
         </section>
       </div>
